@@ -10,13 +10,13 @@ class TituloSecao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
       child: Text(
         titulo,
         style: const TextStyle(
-          fontSize: 20.0,
+          fontSize: 40.0,
           fontWeight: FontWeight.bold,
-          color: Colors.blueAccent,
+          color: Color.fromRGBO(68, 138, 255, 1),
         ),
       ),
     );

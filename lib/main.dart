@@ -6,18 +6,51 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'WeatherApp',
-      home: const Scaffold(
-        body: _TelaClima(),
-      ),
+      home: ListContents(),
+    
     );
   } 
+}
+
+class ListContents extends StatelessWidget {
+  const ListContents({super.key});
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Home')),
+      body: Column(
+        children: [
+          TituloSecao(titulo: 'Clima Tempo Senac'),
+          Container(
+            color: Color.fromRGBO(68, 138, 255, 1),
+            padding: EdgeInsets.all(25),  
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => _TelaClima()),
+            ),
+             child: Text('Clima atual'),
+          ),
+ 
+          ElevatedButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => _TelaClima()),
+            ),
+            child: Text('Previsão da semana'),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _TelaClima extends StatelessWidget {
